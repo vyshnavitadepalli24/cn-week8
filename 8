@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+
+    printf("Enter number of frames : ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+    {
+        printf("\nSender : Sending Frame %d...\n", i);
+        if (i == 3)
+        {
+            printf("Frame %d transmission failed!\n", i);
+            printf("Sender : Timeout occurred.\n");
+            printf("Sender : Retransmitting Frame %d...\n", i);
+        }
+        printf("Receiver : Frame %d received successfully .\n", i);
+        printf("Receiver : Sending ACK %d received.\n", i);
+        printf("Sender : ACK %d received.\n", i);
+    }
+
+    printf("\nALL frames transmitted successfully.\n");
+    return 0;
+}
